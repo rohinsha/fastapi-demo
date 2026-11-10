@@ -54,7 +54,7 @@ def init_db():
 
 init_db()    
 
-@app.get("/products/")
+@app.get("/products")
 def get_all_products(db: Session = Depends(get_db)):
     products = db.query(database_models.Product).all()
     return products
@@ -67,7 +67,7 @@ def get_product_by_id(product_id: int, db: Session = Depends(get_db)):
         return product
     return {"error": "Product not found"}
 
-@app.post("/products/")
+@app.post("/products")
 def create_product(product: Product, db: Session = Depends(get_db)):
     db.add(database_models.Product(**product.model_dump()))
     db.commit()
