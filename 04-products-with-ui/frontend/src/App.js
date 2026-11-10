@@ -4,7 +4,7 @@ import "./App.css";
 import TaglineSection from "./TaglineSection";
 
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || process.env.VITE_API_URL || "https://onrender.com",
+  baseURL: process.env.REACT_APP_API_URL || process.env.VITE_API_URL || "https://fastapi-demo-sk8n.onrender.com",
 });
 
 
